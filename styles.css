@@ -1,0 +1,13 @@
+body {
+    background-color: cadetblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+    text-align: center;
+    color: blueviolet;
+}
+.about {
+    text-align: right;
+    width: 100%;
+    color: aquamarine;
+}
