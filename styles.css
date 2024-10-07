@@ -7,18 +7,29 @@ h1 {
     color: blueviolet;
 }
 .about {
-    text-align: left;
+    text-align: center;
     width: 100%;
     color: aquamarine;
 }
 .skills {
     color: #333;
     font-size: 1.2em;
+    text-align: center;
 }
 .projects {
-    border: 2px solid #ff6600;
+    display:flex;
+    flex-wrap:wrap;
+    
 }
 .contact {
     text-align: center;
     padding: 20px;
+}
+.project {
+    width: 30%;
+    margin: 10px;
+    padding: 20px 10px;
+    background: tan;
+    border-radius: 25%;
+    text-align: center;
 }
