@@ -1,74 +1,67 @@
 body {
-    background-color: cadetblue;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto', sans-serif; /* A clean, modern font */
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
 }
+
 h1 {
+    font-size: 3em;
     text-align: center;
-    color: blueviolet;
+    color: #ff6384; /* A vibrant pink */
 }
+
 .about {
-    text-align: center;
-    width: 100%;
-    color: aquamarine;
-}
-.skills {
-    color: #333;
-    font-size: 1.2em;
-    text-align: center;
-}
-.projects {
-    display:flex;
-    flex-wrap:wrap;
-    
-}
-.contact {
-    text-align: center;
-    padding: 20px;
-}
-.project {
-    width: 30%;
-    margin: 10px;
-    padding: 20px 10px;
-    background: tan;
-    border-radius: 25%;
-    text-align: center;
-}
-a { /* change the appearance of ALL links */
-text-decoration: none;
-color: purple;
-}
-.project p { /* change the appearance of paragraph tags inside .project divs */
-text-align: center;
-margin: 15px;
-}
-
-.project img{
-width: 300px;
-height: 300px;
-margin: 10px;
-border: 2px solid rgb(126, 14, 201); /* cadetblue; */
-display: block;
-margin: auto;
-}
-
-.about{
-display:flex;
-flex-wrap:wrap;
-margin-right: 100px;
-margin-left: 100px;
-justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space elements apart */
+    margin: 50px;
 }
 
 .about p {
-width:50%;
-text-align: center;
-margin: auto;
-line-height: 125%;
+    width: 45%;
+    text-align: justify;
+    margin: 10px;
 }
 
 .about img {
-width: 150px;
-height: 200px;
-border-radius: 25%;
-border: 2px solid rgb(126, 14, 201);
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+.skills {
+    text-align: center;
+    color: #fff;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Space projects evenly */
+}
+
+.project {
+    background-color: #222;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    padding: 20px;
+    flex: 1 1 300px; /* Ensure consistent sizing */
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact {
+    text-align: center;
+    color: #fff;
+    margin: 50px;
+}
+
+a {
+    color: #ff6384; /* Match the pink accent color */
 }
