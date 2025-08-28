@@ -1,0 +1,141 @@
+/*Structure*/
+body {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background:url("images/Screenshot (13).png");
+  background-size: cover;
+}
+
+#content{
+  background: #d87093;
+  width:70%;
+  color: #daa520;
+  margin: auto;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+/*Links*/
+a:link{
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+} 
+
+a:active{
+  text-decoration: underline;
+ }
+
+
+ /*Typography*/
+h1 {
+  color: #8a2be2;
+}
+h2{
+  color:#c0c0c0
+}
+
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Image Styles */
+.project-image {
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation */
+nav {
+  background-color: #222;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.about p {
+  width: 45%;
+  text-align: justify;
+  color: #fff;
+  margin: 10px;
+}
+
+.about img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills Section */
+.skills {
+  text-align: center;
+  color: #fff;
+  margin: 50px;
+}
+
+/* Projects Section */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.project {
+  background-color: #222;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  flex: 1 1 300px;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  color: #fff;
+  margin: 50px;
+}
+
+a {
+  color: #ff0000;
+  text-decoration: none;
+}
