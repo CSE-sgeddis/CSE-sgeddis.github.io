@@ -1,6 +1,28 @@
+:root{
+    --primary-color:#8BBF56;
+    --secondary-color: #B9D989;
+}
+
+
 body{
-    background:#8BBF56;
+    background:var(--primary-color);
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* SHowcase */
+#showcase{
+    position: relative;
+}
+
+#showcase p{
+    background: rgba(0,0,0,0.7);
+    color:white;
+    padding:5px;
+    width:fit-content;
+
+    position: absolute;
+    bottom:20%;
+    left:5%;
 }
 
 #content{
@@ -12,17 +34,31 @@ body{
 }
 
 #main-header{
-    background:#618C20;
+    background:var(--primary-color);
     color:white;
     border-radius:5px;
     padding:5px;
+    position:relative;
+}
+
+#main-header img{
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:75px;
+    border-radius:50px;
 }
 
 
 /*Main Navigation */
-#main-nav ul{
+nav ul{
     padding-left: 0;
     list-style-type: none; /*remove the bullets*/
+}
+
+nav a{
+    text-decoration: none;
 }
 
 #main-nav li{
@@ -37,12 +73,31 @@ body{
     color:white;
     padding:10px 5px;
     display:block;
-    text-decoration:none;
 }
 
 #main-nav a:hover{
     background:white;
-    color:#B9D989;
+    color:var(--secondary-color);
+}
+
+#login-nav{
+    position:absolute;
+    top:2.5%;
+    right:2.5%;
+}
+
+#login-nav a{
+    color:white;
+    padding:5px;
+    display:block;
+}
+
+#login-nav li:hover{
+    border-bottom: 1px solid white;
+}
+
+#login-nav a:not(:last-child)::after{
+    content:"|";
 }
 
 /*Typography*/
@@ -84,5 +139,13 @@ h1{
         background:#618C20;
         color:white;
         border-bottom: 1px solid white;
+    }
+
+    #login-nav a:not(:last-child)::after{
+    content:"|";
+    }
+
+    .hide-small{
+        display:block;
     }
 }
