@@ -63,9 +63,14 @@ footer nav a.active{
     font-weight: bold;
 }
 
+footer nav:hover{
+    background: var(--light-gray, #f2f2f2);
+    color: var(--black, #000);
+}
+
 /*  Main Page */
 body.main-page{
-    background: url("projects\images\Stray-Kids-Rome-Roma-min-2-scaled.jpg") no-repeat center center/cover;
+    background: url("projects/images/Stray-Kids-Rome-Roma-min-2-scaled.jpg") no-repeat center center/cover;
     color:var(--bg);
 }
 
@@ -77,6 +82,7 @@ body.main-page header{
 
 body.main-page .logo{
     font-weight: bold;
+    display:inline-block;
 }
 
 body.main-page .tagline{
@@ -156,6 +162,12 @@ body.main-page .tagline{
     margin-bottom: 1rem;
 }
 
+.comm-card img{
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
 .go-btn{
     background-color: #999;
     color: white;
@@ -168,6 +180,11 @@ body.main-page .tagline{
 
 .go-btn:hover{
     background-color: #777;
+}
+
+.community-feature img{
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 /* Mobile Layout */
@@ -188,5 +205,9 @@ body.main-page .tagline{
 
     .communication-section{
         grid-template-columns: 1fr;
+    }
+
+    body{
+        padding-bottom:60px;
     }
 }
