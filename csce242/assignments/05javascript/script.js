@@ -1,5 +1,5 @@
 // Beatles lyrics
-const lyrics = `Here comes the sun, doo-doo-doo-doo... Here comes the sun, and I say, it's all right.`;
+const lyrics = `Here comes the sun.`;
 
 //Handle Sunny Times click
 const sunnyColumn = document.getElementById("sunnyColumn");
