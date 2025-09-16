@@ -1,0 +1,563 @@
+root{
+    --text: #fff;
+    --muted: #666;
+    --border: #ccc;
+    --accent: #111;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-family);
+    color:var(--text);
+    line-height:1.6;
+    display:flex;
+    flex-direction:column;
+    padding-bottom:80px;
+}
+
+/*Header */
+header{
+    padding:1rem;
+    text-align:center;
+}
+
+header h1{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+h1, h2, h3{
+    font-weight: 900;
+}
+
+p{
+    font-weight: 400;
+}
+
+/*Footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    right:0;
+    background-color: #111;
+    border-radius: 4px 4px 0 0;
+    padding: 0.5rem;
+    z-index:100;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+footer nav ul{
+    list-style: none;
+    display: flex;
+    gap:16px;
+    margin:0;
+    padding:0;
+    justify-content: center; 
+}
+
+footer nav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+footer nav a.active{
+    background-color: #333;
+    color: var(--text);
+    font-weight: bold;
+}
+
+footer nav:hover{
+    background-color: var(--border);
+    color: var(--muted);
+}
+
+/*  Main Page */
+body.main-page{
+    background: url("images/Stray-Kids-Rome-Roma-min-2-scaled.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:var(--text);
+    min-height: 100vh;
+}
+
+body.main-page header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+body.main-page .logo{
+    font-weight: bold;
+    display:inline-block;
+    color:#f9f9f9;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+body.main-page .tagline{
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:#f9f9f9;
+    background-color: rgba(0,0,0,0.7);
+    padding: 8px 16px;
+    border-radius:4px;
+    display:inline-block;
+}
+
+/* Grids */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 1rem;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 400px;
+}
+
+.card{
+    border: 1 px solid var(--border);
+    padding: 0.5rem;
+    background:#f9f9f9;
+    text-align: center;
+}
+
+.card:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.card img{
+    width:100%;
+    height:auto;
+}
+
+.pagination{
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.pagination button{
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border:none;
+    border-radius: 4px;
+    background-color: #ddd;
+}
+
+.pagination button:hover{
+    background-color: var(--muted);
+}
+
+.pagination button.active{
+    background-color: var(--text);
+    color:white;
+    font-weight: bold;
+}
+
+.pagination button:disabled{
+    background-color: var(--border);
+    cursor: not-allowed;
+    opacity:0.6;
+}
+
+/* Media Page */
+.media-layout{
+    display:flex;
+    gap:2rem;
+    padding: 2rem;
+}
+
+.media-layout .images, .media-layout .videos{
+    flex: 1;
+}
+
+.media-layout ,images .pagination, .media-layout .videos .pagination{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+
+.video-list div{
+    margin-bottom: 1rem;
+}
+
+/* Discography Page */
+.album-card{
+    position: relative;
+}
+
+.album-title{
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index: 1000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content{
+    background-color: white;
+    margin: 5% auto;
+    padding:2rem;
+    border-radius: 8px;
+    width:80%;
+    max-width: 600px;
+    position: relative;
+    color: var(--accent);
+}
+
+.close{
+    color:#aaa;
+    float:right;
+    font-size:28px;
+    font-weight: bold;
+    cursor:pointer;
+    position: absolute;
+    top:1rem;
+    right:1.5rem;
+}
+
+.clos:hover{
+    color:black;
+}
+
+.album-info h2{
+    color:var(--accent);
+    margin-bottom: 1rem;
+}
+
+.track-list{
+    list-style: none;
+    padding:0;
+}
+
+.track-list li{
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+/* Members Page */
+.members-layout{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+    padding:1rem;
+}
+ /* Profile Images Section */
+.profile-images{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position:sticky;
+    top: 2rem;
+}
+
+.profile-image{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 3px solid transparent;
+    text-decoration:none;
+    color:var(--accent);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.profile-image:hover{
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-color: var(--muted);
+}
+
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:50%;
+    margin-bottom:0.5rem;
+}
+
+ /* Member Content Section */
+ .member-content{
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    min-height: 500px;
+    background:white;
+    color:var(--accent);
+ }
+
+ .member-info h2{
+    font-size: 2rem;
+    margin-bottom:1rem;
+    color:var(--accent);
+ }
+
+ .member-info h3{
+    font-size:1.3rem;
+    margin: 1.5rem 0 0.8rem 0;
+    color:var(--accent);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.3rem;
+ }
+
+ .member-info p{
+    margin-bottom: 1rem;
+    text-align: justify;
+    line-height:1.8;
+    color:var(--accent);
+ }
+
+ .member-stats{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap:1rem;
+    margin:1.5rem 0;
+    padding:1rem;
+    background:#f8f9fa;
+    border-radius:8px;
+ }
+
+ .stat-item{
+    text-align:center;
+ }
+
+ .stat-label{
+    font-size: 0.9rem;
+    color:var(--muted);
+    margin-bottom: 0.3rem;
+ }
+
+ .stat-value{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color:var(--accent);
+ }
+
+  /* Member Pagination */
+.member-pagination{
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top:2rem;
+}
+
+.member-pagination a{
+    background-color: var(--accent);
+    color:black;
+    padding: 05rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 0.5rem;
+
+}
+
+.member-pagination a:hover{
+    background-color: var(--muted);
+}
+
+.member-pagination .current{
+    background-color: var(--text);
+    color: var(--accent);
+    font-weight: bold;
+    padding:0.5rem 1rem;
+    border-radius: 6px;
+    margin: 0 0.5rem;
+}
+
+/* Community */
+main{
+    padding:1rem 2rem;
+    flex:1;
+}
+
+.communication-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
+    margin-bottom: 3rem;
+}
+
+.comm-card{
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.comm-card h3{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.comm-card img{
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.go-btn{
+    background-color: #999;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.go-btn:hover{
+    background-color: #777;
+}
+
+.content-area{
+    margin-bottom:2rem;
+}
+
+.content-text{
+    background:white;
+    padding:2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.content-text p{
+    color:var(--accent);
+    line-height:1.8;
+    text-align: justify;
+}
+
+.community-feature{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.community-feature img{
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Mobile Layout */
+@media (max-width: 768px){
+    body{
+        padding-bottom: 100px;
+    }
+
+    footer nav ul{
+        flex-wrap:wrap;
+        gap: 0.5rem;
+    }
+
+    footer nav a{
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+        padding:1rem;
+    }
+
+    .card{
+        flex-direction: column;
+        gap:1rem;
+        padding:1rem;
+    }
+    
+    main{
+        padding-bottom: 5rem;
+    }
+
+    .communication-section{
+        grid-template-columns: 1fr;
+        gap:1rem;
+    }
+
+    .media-layout{
+        flex-direction: column;
+        gap:1rem;
+        padding:1rem;
+    }
+
+    .media-layout .images .pagination, .media-layout .videos .pagination{
+        flex-direction:column;
+        gap:0.5rem;
+    }
+
+    /* Members page */
+    .members-layout{
+        grid-template-columns: 1fr;
+        gap:2rem;
+        padding:1rem;
+    }
+
+    .profile-images{
+        position: static;
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem;
+    }
+
+    .profile-image{
+        font-size: 12px
+    }
+
+    .profile-image img{
+        width:60px;
+        height:60px;
+    }
+
+    .member-content{
+        padding:1rem;
+    }
+
+    .member-stats{
+        grid-template-columns: repeat(2, 1fr);
+        gap:0.5rem;
+    }
+
+    body.main-page{
+        padding-bottom:100px;
+    }
+
+    body.main-page header{
+        flex-direction: column;
+        gap:1rem;
+        text-align:center;
+    }
+
+    body.main-page .tagline{
+        font-size:1.2rem;
+    }
+}

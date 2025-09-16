@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Discography</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>DISCOGRAPHY</h1>
+            <h3>Albums</h3>
+        </header>
+
+        <main>
+            <section class="grid">
+                <div class="card album-card" onclick="showAlbumInfo('I Am NOT')">
+                    <img src="images/discography/IamNOT.jpg" alt="I AM NOT" width="316" height="316">
+                    <div class="album-title">I AM NOT</div>
+                </div>
+                <div class="card album-card" onclick="showAlbumInfo('I Am WHO')">
+                    <img src="images/discography/IamWHO.jpg" alt="I AM WHO">
+                    <div class="album-title">I AM WHO</div>
+                </div>
+                <div class="card album-card" onclick="showAlbumInfo('I Am You')">
+                    <img src="images/discography/IamYOU.jpeg" alt="I AM YOU">
+                    <div class="album-title">I AM YOU</div>
+                </div>
+                <div class="card album-card" onclick="showAlbumInfo('Cle 1 Miroh')">
+                    <img src="images/discography/Miroh.png" alt="Cle 1 MIROH">
+                    <div class="album-title">Cle 1 MIROH</div>
+                </div>
+                <div class="card album-card" onclick="showAlbumInfo('Go LIVE')">
+                    <img src="images/discography/GoLive.jpg" alt="Go LIVE">
+                    <div class="album-title">Go LIVE</div>
+                </div>
+                <div class="card album-card" onclick="showAlbumInfo('NOEASY')">
+                    <img src="images/discography/NoEasy.jpeg" alt="NOEASY">
+                    <div class="album-title">NOEASY</div>
+                </div>
+            </section>
+
+            <div id="albumModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="albumDetails">
+                        <!--ALbum details will be inserted here-->
+                    </div>
+                </div>
+            </div>
+        
+            
+            
+            
+            <div class="pagination">
+                <button>Previous</button>
+                <span>1/8</span>
+                <button>Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discography.html" class="active">Discography</a></li>
+                    <li><a href="media.html">Media</a></li> 
+                    <li><a href="members.html">Members</a></li> 
+                    <li><a href="community.html">Community</a></li>     
+                </ul>   
+            </nav>
+        </footer>
+    </body>
+</html>
