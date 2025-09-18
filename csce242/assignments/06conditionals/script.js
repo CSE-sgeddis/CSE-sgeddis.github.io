@@ -8,7 +8,7 @@ const exercise2 = document.getElementById("exercise2");
 
 toggleMenu.addEventListener("click", () => {
     menuItems.classList.toggle("hidden");
-    toggleMenu.textContent = menuItems.classList.contains("hidden") ? "⬇" : "⬆";
+    toggleMenu.textContent = menuItems.classList.contains("hidden") ? "▼" : "▲";
 });
 
 //Switch between exercises
