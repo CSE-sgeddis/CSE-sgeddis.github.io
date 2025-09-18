@@ -8,9 +8,10 @@ const exercise2 = document.getElementById("exercise2");
 
 toggleMenu.addEventListener("click", () => {
     menuItems.classList.toggle("hidden");
-    toggleMenu.textContent = menuItems.classList.contains("hidden") ? "down" : "up";
+    toggleMenu.textContent = menuItems.classList.contains("hidden") ? "⬇" : "⬆";
 });
 
+//Switch between exercises
 exercise1Btn.addEventListener("click", () => {
     exercise1.classList.remove("hidden");
     exercise2.classList.add("hidden");
@@ -21,6 +22,7 @@ exercise2Btn.addEventListener("click", () => {
     exercise1.classList.add("hidden");
 })
 
+// Exercise 1
 const daysSlider = document.getElementById("daysSlider");
 const plantMessage = document.getElementById("plantMessage");
 const plantImage = document.getElementById("plantImage");
@@ -48,7 +50,7 @@ daysSlider.addEventListener("input", () => {
 updatePlant(daysSlider.value);
 
 
-
+// Exercise 2
 const clock = document.getElementById("clock");
 
 function updateClock() {
