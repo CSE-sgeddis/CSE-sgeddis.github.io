@@ -1,0 +1,64 @@
+//menu toggle
+const toggleMenu = document.getElementById("toggleMenu");
+const menuItems = document.getElementById("menuItems");
+const exercise1Btn = document.getElementById("exercise1Btn");
+const exercise2Btn = document.getElementById("exercise2Btn");
+const exercise1 = document.getElementById("exercise1");
+const exercise2 = document.getElementById("exercise2");
+
+toggleMenu.addEventListener("click", () => {
+    menuItems.classList.toggle("hidden");
+    toggleMenu.textContent = menuItems.classList.contains("hidden") ? "down" : "up";
+});
+
+exercise1Btn.addEventListener("click", () => {
+    exercise1.classList.remove("hidden");
+    exercise2.classList.add("hidden");
+});
+
+exercise2Btn.addEventListener("click", () => {
+    exercise2.classList.remove("hidden");
+    exercise1.classList.add("hidden");
+})
+
+const daysSlider = document.getElementById("daysSlider");
+const plantMessage = document.getElementById("plantMessage");
+const plantImage = document.getElementById("plantImage");
+
+function updatePlant(days){
+    if (days <= 2) {
+        plantMessage.textContent = `It's been ${days} days since watering your plant. Your plant is healthy and happy!`;
+        plantImage.src = "images/happyp.jpg";
+    } else if (days <= 5) {
+        plantMessage.textContent = `It's been ${days} days since watering your plant. Your plant needs watering!`;
+        plantImage.src = "images/thirstyp.jpg";
+    } else if (days <= 9) {
+        plantMessage.textContent = `It's been ${days} days since watering your plant. Leaves are dropping, water soon!`;
+        plantImage.src = "images/wiltingp.png";
+    } else {
+        plantMessage.textContent = `It's been ${days} days since watering your plant. Sorry, your plant is no longer with you`;
+        plantImage.src = "images/deadp.jpg";
+    }
+}
+
+daysSlider.addEventListener("input", () => {
+    updatePlant(daysSlider.value);
+});
+
+updatePlant(daysSlider.value);
+
+
+
+const clock = document.getElementById("clock");
+
+function updateClock() {
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes().toString().padStart(2,"0");
+    let ampm = hours >= 12 ? "pm" : "am";
+    hours = hours % 12 || 12;
+    clock.textContent = `${hours}:${minutes} ${ampm}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
