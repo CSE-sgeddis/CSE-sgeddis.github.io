@@ -36,23 +36,33 @@
                     <img src="images/discography/NoEasy.jpeg" alt="NOEASY">
                     <div class="album-title">NOEASY</div>
                 </div>
+                <div class="card album-card" onclick="showAlbumInfo('ODDINARY')">
+                    <img src="images/discography/Stray_Kids_-_Oddinary.jpeg" alt="ODDINARY" loading="lazy">
+                    <div class="album-info">ODDINARY</div>
+                </div>
+                <div class="card album-card" onclick="showAlbumInfo('5-STAR')">
+                    <img src="images/discography/Stray_Kids_-_5-Star.png" alt="5-STAR" loading="lazy">
+                    <div class="album-info">★★★★★ (5-STAR)</div>
+                </div>
+                <div class="card album-card" data-type="album" onclick="showAlbumInfo('ROCK-STAR')">
+                    <img src="images/discography/rockstar.jpg" alt="ROCK-STAR" loading="lazy">
+                    <div class="album-info">락 (ROCK-STAR)</div>
+                </div>
             </section>
 
+        <!-- Album Detail Modal -->
             <div id="albumModal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <div id="albumDetails">
-                        <!--ALbum details will be inserted here-->
+                        <!-- Album details populated by JavaScript -->
                     </div>
                 </div>
             </div>
-        
-            
-            
-            
+
             <div class="pagination">
                 <button id="prevPage">Previous</button>
-                <span id="pageInfo">1/8</span>
+                <span id="pageInfo">Showing 9 of 20+ releases</span>
                 <button id="nextPage">Next</button>
             </div>
         </main>
@@ -67,10 +77,10 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="discography.html" class="active">Discography</a></li>
-                    <li><a href="media.html">Media</a></li> 
-                    <li><a href="members.html">Members</a></li> 
-                    <li><a href="community.html">Community</a></li>     
-                </ul>   
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
             </nav>
         </footer>
         <script src="js/discography.js"></script>

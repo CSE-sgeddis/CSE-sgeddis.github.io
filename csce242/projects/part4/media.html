@@ -12,49 +12,160 @@
         <main class="media-layout">
             <section class="images">
                 <h2>Images</h2>
-                <div class="grid">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
-                    <img src="https://dummyimage.com/150x100/000/fff.jpg" alt="Image">
+                <div class="grid image-grid">
+                    <div class="media-item" data-category="performance" onclick="openLightbox(this)">
+                    <img src="https://via.placeholder.com/300x200/ff4444/ffffff?text=Performance+1" alt="Stray Kids Performance" loading="lazy">
+                    <div class="media-overlay">
+                        <div class="media-title">MANIAC Performance</div>
+                        <div class="media-date">March 2022</div>
+                    </div>
                 </div>
-                <div class="pagination">
-                    <button>Previous</button>
-                    <span>1/5</span>
-                    <button>Next</button>
+                <div class="media-item" data-category="behind" onclick="openLightbox(this)">
+                    <img src="https://via.placeholder.com/300x200/ff6444/ffffff?text=Behind+Scenes+1" alt="Behind the Scenes" loading="lazy">
+                    <div class="media-overlay">
+                        <div class="media-title">Recording Session</div>
+                        <div class="media-date">April 2022</div>
+                    </div>
                 </div>
-            </section>
+                <div class="media-item" data-category="photoshoot" onclick="openLightbox(this)">
+                    <img src="https://via.placeholder.com/300x200/ff8444/ffffff?text=Photoshoot+1" alt="Photoshoot" loading="lazy">
+                    <div class="media-overlay">
+                        <div class="media-title">ODDINARY Concept</div>
+                        <div class="media-date">February 2022</div>
+                    </div>
+                </div>
+                <div class="media-item" data-category="performance" onclick="openLightbox(this)">
+                    <img src="https://via.placeholder.com/300x200/ffa444/ffffff?text=Performance+2" alt="Live Performance" loading="lazy">
+                    <div class="media-overlay">
+                        <div class="media-title">God's Menu Live</div>
+                        <div class="media-date">June 2020</div>
+                    </div>
+                </div>
+                <div class="media-item" data-category="behind" onclick="openLightbox(this)">
+                    <img src="https://via.placeholder.com/300x200/ffc444/ffffff?text=Behind+Scenes+2" alt="Behind Scenes" loading="lazy">
+                    <div class="media-overlay">
+                        <div class="media-title">MV Filming</div>
+                        <div class="media-date">May 2023</div>
+                    </div>
+                </div>
+                <div class="media-item" data-category="photoshoot" onclick="openLightbox(this)">
+                    <img src="https://via.placeholder.com/300x200/ffe444/ffffff?text=Photoshoot+2" alt="Magazine Shoot" loading="lazy">
+                    <div class="media-overlay">
+                        <div class="media-title">5-STAR Editorial</div>
+                        <div class="media-date">June 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button id="imagePrev">Previous</button>
+                <span id="imagePageInfo">Page 1 of 5</span>
+                <button id="imageNext">Next</button>
+            </div>
+        </section>
 
-            <section class="videos">
-                <h2>Recent Videos</h2>
-                <div class="video-list">
-                    <div><img src="https://dummyimage.com/300x150/000/fff.jpg" alt="Video"></div>
-                    <div><img src="https://dummyimage.com/300x150/000/fff.jpg" alt="Video"></div>
-                    <div><img src="https://dummyimage.com/300x150/000/fff.jpg" alt="Video"></div>
+        <section class="videos">
+            <h2>Recent Videos</h2>
+            <div class="video-list">
+                <div class="video-item" onclick="playVideo('LALALALA')">
+                    <div class="video-thumbnail">
+                        <img src="images/media/dBDkYofMUs4-HD.jpg" alt="LALALALA Music Video" loading="lazy">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Stray Kids "LALALALA" M/V</h3>
+                        <p>Official Music Video • Nov 10, 2023</p>
+                        <div class="video-stats">45M views • 1.2M likes</div>
+                    </div>
                 </div>
-                <div class="pagination">
-                    <button>Previous</button>
-                    <span>1/5</span>
-                    <button>Next</button>
+                
+                <div class="video-item" onclick="playVideo('S-Class')">
+                    <div class="video-thumbnail">
+                        <img src="images/media/JsOOis4bBFg-HD.jpg" alt="S-Class Music Video" loading="lazy">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Stray Kids "S-Class" M/V</h3>
+                        <p>Official Music Video • Jun 2, 2023</p>
+                        <div class="video-stats">89M views • 2.1M likes</div>
+                    </div>
                 </div>
-            </section>
-        </main>
+                
+                <div class="video-item" onclick="playVideo('MANIAC')">
+                    <div class="video-thumbnail">
+                        <img src="images/media/OvioeS1ZZ7o-SD.jpg" alt="MANIAC Music Video" loading="lazy">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Stray Kids "MANIAC" M/V</h3>
+                        <p>Official Music Video • Mar 18, 2022</p>
+                        <div class="video-stats">156M views • 3.5M likes</div>
+                    </div>
+                </div>
+                
+                <div class="video-item" onclick="playVideo('Thunderous')">
+                    <div class="video-thumbnail">
+                        <img src="images/media/EaswWiwMVs8-SD.jpg" alt="Thunderous Music Video" loading="lazy">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Stray Kids "Thunderous" M/V</h3>
+                        <p>Official Music Video • Aug 23, 2021</p>
+                        <div class="video-stats">201M views • 4.8M likes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button id="videoPrev">Previous</button>
+                <span id="videoPageInfo">Showing 4 of 20+ videos</span>
+                <button id="videoNext">Next</button>
+            </div>
+        </section>
+    </main>
 
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discography.html">Discography</a></li>
-                    <li><a href="media.html" class="active">Media</a></li> 
-                    <li><a href="members.html">Members</a></li> 
-                    <li><a href="community.html">Community</a></li>
-                </ul>
-            </nav>
-        </footer>
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="modal">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDate"></p>
+            </div>
+            <button class="lightbox-nav prev" onclick="navigateLightbox(-1)">‹</button>
+            <button class="lightbox-nav next" onclick="navigateLightbox(1)">›</button>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="video-modal-content">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <div class="video-container">
+                <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-modal-info">
+                <h3 id="videoModalTitle"></h3>
+                <p id="videoModalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discography.html">Discography</a></li>
+                <li><a href="media.html" class="active">Media</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+    </footer>
         <script src="js/media.js"></script>
     </body>
 </html>
