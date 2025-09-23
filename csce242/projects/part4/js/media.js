@@ -51,61 +51,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         openLightbox(visibleItems[currentLightboxIndex]);
     };
-
-
-    // video modal functionality
-    const videoData = {
-       'LALALALA': {
-            title: 'Stray Kids "LALALALA" M/V',
-            description: 'The energetic title track from ROCK-STAR album',
-            embedId: 'https://www.youtube.com/embed/dBDkYofMUs4?si=v6YIgtTGTWldldGa' 
-        },
-        'S-Class': {
-            title: 'Stray Kids "S-Class" M/V', 
-            description: 'Lead single from the 5-STAR album',
-            embedId: 'https://www.youtube.com/embed/JsOOis4bBFg?si=C-asC58p7I6Wm6-O'
-        },
-        'MANIAC': {
-            title: 'Stray Kids "MANIAC" M/V',
-            description: 'Title track from ODDINARY album',
-            embedId: 'https://www.youtube.com/embed/OvioeS1ZZ7o?si=AXgw4boyWEwpEZmE'
-        },
-        'Thunderous': {
-            title: 'Stray Kids "Thunderous" M/V',
-            description: 'Powerful title track from NOEASY album',
-            embedId: 'https://www.youtube.com/embed/EaswWiwMVs8?si=tdc65utbbKHnBJhx'
-        }
-    };
-             
-    window.playVideo = function(videoKey) {
-        const video = videoData[videoKey];
-        if (!video) return;
-
-        document.getElementById('videoModalTitle').textContent = video.title;
-        document.getElementById('videoModalDescription').textContent = video.description;
-        document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${video.embedId}?autoplay=1`;
-
-        document.getElementById('videoModal').style.display = 'block';
-    };
-
-    window.closeVideoModal = function(){
-        document.getElementById('videoModal').style.display = 'none';
-        document.getElementById('videoFrame').src = '';
-    };
-
-    //Close modals when clicking outside
-    window.addEventListener('click', function(event) {
-        const lightboxModal = this.document.getElementById('lightboxModal');
-        const videoModal = this.document.getElementById('videoModal');
-
-        if (event.target == lightboxModal){
-            closeLightbox();
-        }
-        if (event.target == videoModal){
-            closeVideoModal();
-        }
-    });
-
+    
     //Hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('footer nav ul');

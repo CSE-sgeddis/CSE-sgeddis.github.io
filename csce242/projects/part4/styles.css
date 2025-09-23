@@ -1,11 +1,53 @@
 root{
+    /* Primary brand colors */
+    --primary-black: #1a1a1a;
+    --primary-white: $ffffff;
+    --accent-red: #ff4444;
+    --accent-orange: #ff8c42;
+
+    /* Secondary */
+    --dark-gray: #2d2d2d;
+    --medium-gray: #666666;
+    --light-gray: #f5f5f5;
+    --border-gray: #e0e0e0;
+
+    /* Text colors */
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --text-inverse: #ffffff;
+    --text-muted: #999999;
+
+    /* Background colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-dark: #1a1a1a;
+    --bg-overlay: rgba(26,26,26,0.8);
+
+    /* Variables */
     --text: #fff;
     --muted: #666;
     --border: #ccc;
     --accent: #111;
     --font-family: 'Montserrat', sans-serif;
-}
 
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm:1rem;
+    --spacing-md:1.5rem;
+    --spacing-lg:2rem;
+    --spacing-xl:3rem;
+
+    /* Border radius */
+    --radius-sm:4px;
+    --radius-md:8px;
+    --radius-lg:12px;
+    --radius-xl:16px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(26,26,26,0.1);
+    --shadow-md: 0 4px 12px rgba(26,26,26,0.15);
+    --shadow-lg: 0 8px 24px rgba(26,26,26,0.2);
+}
 
 *{
     margin:0;
@@ -128,6 +170,7 @@ body.main-page .tagline{
     margin: 0 auto;
     max-width: 1200px;
     min-height: 400px;
+    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);
 }
 
 .card{
@@ -177,10 +220,12 @@ body.main-page .tagline{
 }
 
 /* Media Page */
+
 .media-layout{
     display:flex;
     gap:2rem;
     padding: 2rem;
+    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);
 }
 
 .media-layout .images, .media-layout .videos{
@@ -199,6 +244,15 @@ body.main-page .tagline{
 }
 
 /* Discography Page */
+body.discography-page{
+    --accent-red: var(--accent-red);
+    --accent-orange: var(--accent-orange);
+}
+
+body.discography-page header::after {
+    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);  
+}
+
 .album-card{
     position: relative;
 }
@@ -242,7 +296,7 @@ body.main-page .tagline{
     right:1.5rem;
 }
 
-.clos:hover{
+.close:hover{
     color:black;
 }
 
@@ -261,12 +315,22 @@ body.main-page .tagline{
     border-bottom: 1px solid #eee;
 }
 /* Members Page */
+body.members-page{
+    --accent-red: var(--accent-red);
+    --accent-orange: var(--accent-orange);
+}
+
+body.members-page header::after {
+    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);  
+}
+
 .members-layout{
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 3rem;
     align-items: start;
     padding:1rem;
+    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);
 }
  /* Profile Images Section */
 .profile-images{
@@ -396,6 +460,7 @@ body.main-page .tagline{
 main{
     padding:1rem 2rem;
     flex:1;
+    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);
 }
 
 .communication-section{
