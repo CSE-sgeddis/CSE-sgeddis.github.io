@@ -1,8 +1,11 @@
 const btn = document.getElementById("drawBtn");
-const scene = document.getElementById("scene");
+const sky = document.getElementById("sky");
+const ground = document.getElementById("ground");
+
 
 btn.addEventListener("click", () => {
-    scene.innerHTML = "";
+    sky.innerHTML = "";
+    ground.innerHTML = "";
 
     // Draw 6 clouds
     for (let i=0; i < 6; i++){
@@ -31,4 +34,4 @@ btn.addEventListener("click", () => {
         skyObject.className = "sun";
     }
     scene.appendChild(skyObject);
-})
+});
