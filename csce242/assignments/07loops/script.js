@@ -7,18 +7,18 @@ btn.addEventListener("click", () => {
     sky.innerHTML = "";
     ground.innerHTML = "";
 
-    // Draw 6 clouds
+    // Draw clouds
     for (let i=0; i < 6; i++){
         const cloud = document.createElement("div");
         cloud.className = "cloud";
-        scene.appendChild(cloud);
+        sky.appendChild(cloud);
     }
 
-    // Draw 6 trees
+    // Draw trees
     for (let i=0; i < 6; i++){
         const tree = document.createElement("div");
         tree.className = "tree";
-        scene.appendChild(tree);
+        ground.appendChild(tree);
     }
 
     // Morning or Night by time
@@ -29,7 +29,7 @@ btn.addEventListener("click", () => {
         skyObject = document.createElement("div");
         skyObject.className = "moon";
     } else{
-        document.body.style.background = "skyblue";
+        document.body.style.background = "#add8e6";
         skyObject = document.createElement("div");
         skyObject.className = "sun";
     }
