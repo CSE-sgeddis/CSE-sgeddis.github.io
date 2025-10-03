@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let currentIndex = 0;
 
     
-    const JSON_URL = 'https://CSE-sgeddis.github.io\csce242\projects\part6\json\members.json';
+    const JSON_URL = 'https://cse-sgeddis.github.io/csce242/projects/part6/json/members.json';
 
     // Fetch and load members data from JSON
     fetch(JSON_URL)
