@@ -11,8 +11,8 @@
         </header>
 
         <main>
-            <section class="grid">
-                <div class="card album-card" onclick="showAlbumInfo('I Am NOT')">
+            <section class="grid" id="albumGrid">
+                <!-- <div class="card album-card" onclick="showAlbumInfo('I Am NOT')"> 
                     <img src="images/discography/iamNOT2.jpg" alt="I AM NOT" width="316" height="316">
                     <div class="album-title">I AM NOT</div>
                 </div>
@@ -48,22 +48,22 @@
                     <img src="images/discography/rockstar.jpg" alt="ROCK-STAR" loading="lazy">
                     <div class="album-info">락 (ROCK-STAR)</div>
                 </div>
+            -->
             </section>
+        
 
         <!-- Album Detail Modal -->
             <div id="albumModal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <div id="albumDetails">
-                        <!-- Album details populated by JavaScript -->
+                        <!-- Album details from JavaScript -->
                     </div>
                 </div>
             </div>
 
             <div class="pagination">
-                <button id="prevPage">Previous</button>
-                <span id="pageInfo">Showing 9 of 20+ releases</span>
-                <button id="nextPage">Next</button>
+                <span id="pageInfo">Loading albums...</span>
             </div>
         </main>
 

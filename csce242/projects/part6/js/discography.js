@@ -1,74 +1,65 @@
 document.addEventListener('DOMContentLoaded', function(){
-//Album data
-    const albumData = {
-        'I Am NOT': {
-            title:['I Am NOT'],
-            releaseDate: ['March 16, 2018'],
-            description: ['The debut mini album that introduced Stray Kids to the world with their powerful message of self-identity.'],
-            tracks: ['District 9', 'Mirror', 'Awaken', 'Rock', 'Grow Up', 'Mixtape#1', 'Mixtape#2', 'Mixtape#3']
-        },
-        'I Am WHO': {
-            title:'I Am WHO',
-            releaseDate: 'August 06, 2018',
-            description: 'Second mini album exploring themes of finding oneself and overcoming obstacles.',
-            tracks: ['Voices', 'My Pace', 'Insomnia', 'Hero\'s Soup', 'Question', 'Mixtape#4', 'Mixtape#5']
-        },
-        'I Am YOU': {
-            title:'I Am YOU',
-            releaseDate: 'October 22, 2018',
-            description: 'Third installment of the I Am series, focusing on relationships and connections.',
-            tracks: ['I Am YOU', 'My Universe', 'Heroic Soup', 'Get Cool', 'Mixtape: On Track']
-        },
-        'Cle 1 MIROH': {
-            title:'Cle 1 : Miroh',
-            releaseDate: 'March 25, 2019',
-            description: 'Beginning of the Clé series with the powerful title track MIROH.',
-            tracks: ['MIROH', 'Victory Song', 'Maze of Memories', 'MIROH (Extended Ver.)', 'Entrance', 'Chronosaurus']
-        },
-        'Go LIVE': {
-            title:'Go LIVE',
-            releaseDate: 'June 17, 2020',
-            description: 'First full-length album featuring the hit title track "God\'s Menu".',
-            tracks: ['God\'s Menu', 'Easy', 'Pacemaker', 'Another Day', 'Phobia', 'Blueprint', 'TA', 'Haven']
-        },
-        'NOEASY': {
-            title:'NOEASY',
-            releaseDate: 'August 23, 2021',
-            description: 'Second studio album with the explosive title track "Thunderous".',
-            tracks: ['Cheese', 'Thunderous', 'Domino', 'SSICK', 'The View', 'Sorry, I Love You', 'Silent Cry', 'Secret Secret']
-        },
+    let albumsData = [];
 
-        'ODDINARY': {
-            title: 'ODDINARY',
-            releaseDate: 'March 18, 2022',
-            description: 'Embracing being odd and ordinary simultaneously. Features the intense title track "MANIAC".',
-            tracks: ['VENOM', 'MANIAC', 'Charmer', 'FREEZE', 'LOL', 'Muddy Water', 'Lonely St.', 'Waiting For Us'],
-        },
-        '5-STAR': {
-            title: '★★★★★ (5-STAR)',
-            releaseDate: 'June 2, 2023',
-            description: 'Third studio album showcasing peak artistic achievement with "S-Class" leading the charge.',
-            tracks: ['Hall of Fame', 'S-Class', 'ITEM', 'Super Bowl', 'TOPLINE (Feat. Tiger JK)', 'DLC', 'GET LIT', 'Collision', 'FNF', 'Youtiful', 'THE SOUND', 'Time Out'],
-        },
-        'ROCK-STAR': {
-            title: '락 (ROCK-STAR)',
-            releaseDate: 'November 10, 2023',
-            description: 'Latest album proving their rock-solid status in the industry with "LALALALA" as the energetic title track.',
-            tracks: ['LALALALA', 'MEGAVERSE', 'COMFLEX', 'COVER ME', 'Leave', 'SOCIAL PATH (Feat. LiSA)', 'Blind Spot', 'ROCK (락)'],
-        }
-    };
+    const JSON_URL = 'https://cse-sgeddis.github.io/csce242/projects/part6/json/albums.json';
 
-    //Modal functionality
-    window.showAlbumInfo = function(albumName){
-        const album = albumData[albumName];
-        if (!album) return;
+    
+    fetch(JSON_URL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Albums loaded successfully:', data);
+            albumsData = data;
+            displayAlbums();
+        })
+        .catch(error => {
+            console.error('Error loading albums data:', error);
+            document.getElementById('pageInfo').textContent = 'Error loading albums';
+        });
 
+    function displayAlbums() {
+        const grid = document.getElementById('albumGrid');
+        grid.innerHTML = '';
+
+        albumsData.forEach(album => {
+            const albumCard = document.createElement('div');
+            albumCard.className = 'card album-card';
+            albumCard.onclick = function() { showAlbumInfo(album); };
+
+            const img = document.createElement('img');
+            img.src = album.img_name;
+            img.alt = album.title;
+            img.width = 316;
+            img.height = 316;
+            img.loading = 'lazy';
+
+            const titleDiv = document.createElement('div');
+            titleDiv.className = 'album-title';
+            titleDiv.textContent = album.title;
+
+            albumCard.appendChild(img);
+            albumCard.appendChild(titleDiv);
+            grid.appendChild(albumCard);
+        });
+
+        // Update page info
+        document.getElementById('pageInfo').textContent = `Showing ${albumsData.length} releases`;
+    }
+
+    // Show album details in modal
+    function showAlbumInfo(album) {
         const modal = document.getElementById('albumModal');
         const details = document.getElementById('albumDetails');
-        return `
+
+        details.innerHTML = `
             <div class="album-info">
                 <h2>${album.title}</h2>
                 <p><strong>Release Date:</strong> ${album.releaseDate}</p>
+                <p><strong>Type:</strong> ${album.type}</p>
                 <p><strong>Description:</strong> ${album.description}</p>
                 <h3>Tracklist:</h3>
                 <ol class="track-list">
@@ -76,14 +67,21 @@ document.addEventListener('DOMContentLoaded', function(){
                 </ol>
             </div>
         `;
-    };
 
-    window.closeModal = function(){
-        document.getElementById('albumModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
 
-    // close Modal when clicking outside
+    // Make showAlbumInfo available globally
+    window.showAlbumInfo = showAlbumInfo;
+
+    // Close modal function
+    window.closeModal = function() {
+        document.getElementById('albumModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+
+    // Close modal when clicking outside
     window.addEventListener('click', function(event) {
         const modal = document.getElementById('albumModal');
         if (event.target == modal) {
@@ -91,18 +89,18 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-    //Hamburger menu
+    // Hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('footer nav ul');
 
-    if (hamburger && navMenu){
-        hamburger.addEventListener('click', function(){
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        document.addEventListener('click', function(e){
-            if(!hamburger.contains(e.target) && !navMenu.contains(e.target)){
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
