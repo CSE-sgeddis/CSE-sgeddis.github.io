@@ -178,6 +178,7 @@ footer nav:hover{
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+
 /* Headers */
 body:not(.main-page) {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
@@ -328,15 +329,19 @@ body.main-page .tagline{
     padding: 0.5rem;
     background:#f9f9f9;
     text-align: center;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
 }
 
 .card:hover{
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
 }
 
 .card img{
     width:100%;
     height:auto;
+    border-radius: var(--radius-sm);
 }
 
 .pagination{
@@ -547,6 +552,7 @@ body.main-page .tagline{
 
 .album-card{
     position: relative;
+    cursor: pointer;
 }
 
 .album-title{
@@ -564,17 +570,24 @@ body.main-page .tagline{
     width:100%;
     height:100%;
     background-color: rgba(0,0,0,0.7);
+    overflow-y: auto;
+    padding: 2rem 1rem;
 }
 
 .modal-content{
-    background-color: white;
-    margin: 5% auto;
+    background-color: var(--accent-orange);
+    margin: 2rem auto;
     padding:2rem;
-    border-radius: 8px;
-    width:80%;
-    max-width: 600px;
+    border-radius: 16px;
+    width:90%;
+    max-width: 700px;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow-y: auto;
     position: relative;
-    color: var(--accent);
+    color: var(--bg-primary);
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+    border: 3px solid var(--discography-primary);
 }
 
 .modal-content .close{
@@ -586,25 +599,72 @@ body.main-page .tagline{
     position: absolute;
     top:1rem;
     right:1.5rem;
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .modal-content .close:hover{
     color:black;
+    transform: scale(1.2);
 }
 
 .album-info h2{
     color:var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--discography-secondary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.album-info h3 {
+    color: var(--discography-secondary);
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.album-info p {
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.album-info p strong {
+    color: var(--discography-primary);
+    font-weight: 600;
 }
 
 .track-list{
     list-style: none;
     padding:0;
+    counter-reset: track-counter;
 }
 
 .track-list li{
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid var(--discography-primary);
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.1) 0%, transparent 100%);
+    border-radius: 4px;
+    counter-increment: track-counter;
+    position: relative;
+    padding-left: 3rem;
+    transition: all 0.3s ease;
+}
+
+.track-list li:hover {
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 153, 204, 0.1) 100%);
+    transform: translateX(5px);
+}
+
+.track-list li::before {
+    content: counter(track-counter);
+    position: absolute;
+    left: 1rem;
+    color: var(--discography-primary);
+    font-weight: bold;
+    font-size: 1.1rem;
 }
   /* Members Page */
 
@@ -620,10 +680,11 @@ body.main-page .tagline{
 
  /* Profile Images Section */
 .profile-images{
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 15px rgba(255, 214, 10, 0.2);
+    border: 2px solid var(--members-primary);
     position:sticky;
     top: var(--spacing-lg);
     display: grid;
@@ -646,7 +707,7 @@ body.main-page .tagline{
     transition: all 0.3s ease;
     border: 2px solid transparent;
     cursor: pointer;
-    background: var(--bg-secondary);
+    background: rgba(255, 255, 255, 0.7);
     min-height: 140px; 
     justify-content: center;
 }
@@ -654,9 +715,9 @@ body.main-page .tagline{
 .profile-image:hover, .profile-image.active{
     background: linear-gradient(135deg, var(--members-primary), var(--members-secondary));
     color: var(--text-inverse);
-    transform: scale(1);
+    transform: scale(1.05);
     border-color: var(--members-primary);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 6px 20px rgba(255, 214, 10, 0.4);
 }
 
 .profile-image img{
@@ -673,17 +734,19 @@ body.main-page .tagline{
 .profile-image.active img {
     border-color: var(--text-inverse);
     transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
  
 /* Member Content Section */
 .member-content{
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #fffef9 0%, #fff9e6 100%);
     padding: var(--spacing-xl);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 15px rgba(255, 214, 10, 0.2);
     min-height: calc(100vh - 200px);
-    border-left: 4px solid var(--members-primary);
+    border-left: 5px solid var(--members-primary);
+    border-top: 2px solid var(--members-secondary);
     grid-row: 1; 
     grid-column: 2;
 }
@@ -705,26 +768,32 @@ body.main-page .tagline{
 }
 
 .member-info h2{
-    font-size: 2rem;
-    margin-bottom:1rem;
-    color:var(--accent);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--members-primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--members-secondary);
+    padding-bottom: 0.5rem;
 }
 
 .member-info h3{
-    font-size:1.3rem;
+    font-size:1.4rem;
     margin: 1.5rem 0 0.8rem 0;
     color:var(--accent);
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 0.3rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--members-primary);
 }
 
 .member-info p{
     margin-bottom: var(--spacing-sm);
     text-align: justify;
-    line-height: 1.8;
+    line-height: 1.9;
     color: var(--text-secondary);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
 }
 
 .member-stats{
@@ -733,18 +802,32 @@ body.main-page .tagline{
     gap:1rem;
     margin:1.5rem 0;
     padding:1rem;
-    background:#f8f9fa;
-    border-radius:8px;
+    background: linear-gradient(135deg, rgba(255, 214, 10, 0.2) 0%, rgba(255, 183, 0, 0.15) 100%);
+    border-radius: 12px;
+    border: 2px solid var(--members-primary);
+    box-shadow: 0 2px 8px rgba(255, 214, 10, 0.2);
 }
 
 .stat-item{
     text-align:center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3);
 }
 
 .stat-label{
     font-size: 0.9rem;
     color:var(--muted);
     margin-bottom: 0.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .stat-value{
@@ -772,7 +855,7 @@ body.main-page .tagline{
     text-decoration: none;
     display: inline-block;
     margin: 0 0.5rem;
-
+    transition: all 0.3s ease;
 }
 
 .member-pagination button {
@@ -999,6 +1082,28 @@ main{
         height: 200px;
     }
 
+    .modal {
+        padding: 1rem 0.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+        margin: 1rem auto;
+        max-height: 90vh;
+    }
+
+    .album-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .track-list li {
+        padding: 0.6rem 0.8rem;
+        padding-left: 2.5rem;
+        font-size: 0.9rem;
+    }
+
+
     /* Members page */
     .members-layout{
         grid-template-columns: 1fr;
@@ -1073,5 +1178,18 @@ main{
 
     .media-item {
         height: 250px;
+    }
+
+    .modal-content {
+        width: 98%;
+        padding: 1.2rem;
+    }
+
+    .album-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .album-info h3 {
+        font-size: 1.1rem;
     }
 }
