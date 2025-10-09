@@ -190,8 +190,7 @@ body.discography-page {
 }
 
 body.media-page {
-    --accent-red: var(--media-primary);
-    --accent-orange: var(--media-secondary);
+    background: #c77dff;
 }
 
 body.members-page {
@@ -575,7 +574,7 @@ body.main-page .tagline{
 }
 
 .modal-content{
-    background-color: var(--accent-orange);
+    background-color: #ff8c42;
     margin: 2rem auto;
     padding:2rem;
     border-radius: 16px;
@@ -585,8 +584,8 @@ body.main-page .tagline{
     max-height: 85vh;
     overflow-y: auto;
     position: relative;
-    color: var(--bg-primary);
-    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+    color: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 213, 255, 0.352);
     border: 3px solid var(--discography-primary);
 }
 
@@ -669,6 +668,7 @@ body.main-page .tagline{
   /* Members Page */
 
 .members-layout{
+    background-color: rgba(10, 51, 255, 0.3);
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: var(--spacing-xl);
@@ -903,7 +903,7 @@ body.main-page .tagline{
 main{
     padding:1rem 2rem;
     flex:1;
-    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);
+    background: linear-gradient(90deg, #ff4444 0%, #ff8c42 100%);
 }
 
 .communication-section{
