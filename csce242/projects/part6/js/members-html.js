@@ -158,19 +158,29 @@ document.addEventListener('DOMContentLoaded', function(){
 
         if (memberInfo) {
             memberInfo.classList.add('active');
+        } else {
+            console.warn('Member info not found for:', memberId);
         }
+
         if (profileImage) {
             profileImage.classList.add('active');
+        } else {
+            console.warn('Profile image not found for:', memberId);
         }
 
         // Update pagination
         const currentMemberSpan = document.querySelector('.current-member');
-        currentMemberSpan.textContent = `${membersData[index].name} (${index + 1}/${membersData.length})`;
+        if (currentMemberSpan) {
+            currentMemberSpan.textContent = `${membersData[index].name} (${index + 1}/${membersData.length})`;
+        } else {
+            console.warn('Current member span not found');
+        }
+        
         currentIndex = index;
 
         // Scroll to member content
         const memberContent = document.querySelector('.member-content');
-        if (memberContent) {
+        if (memberContent && window.innerWidth <= 768)) {
             memberContent.scrollIntoView({ 
                 behavior: 'smooth',
                 block: 'start'
