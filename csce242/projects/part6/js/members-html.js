@@ -14,12 +14,16 @@ document.addEventListener('DOMContentLoaded', function(){
             return response.json();
         })
         .then(data => {
+            console.log('Members loaded successfully:', data);
             membersData = data;
             initializeMembers();
         })
         .catch(error => {
             console.error('Error loading members data:', error);
-            document.querySelector('.current-member').textContent = 'Error loading data';
+            const currentMemberSpan = document.querySelector('.current-member');
+            if (currentMemberSpan){
+                currentMemberSpan.textContent = 'Error loading data';
+            }
         });
 
     function initializeMembers() {
@@ -43,6 +47,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function createProfileImages() {
         const container = document.getElementById('profileImagesContainer');
+        if (!container){
+            console.error('Profile images container not found');
+            return;
+        }
+        
         container.innerHTML = '';
 
         membersData.forEach((member, index) => {
@@ -76,6 +85,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function createMemberInfoSections() {
         const container = document.getElementById('memberContentContainer');
+        if (!container){
+            console.error('Member content container not found');
+            return;
+        }
         container.innerHTML = '';
 
         membersData.forEach(member => {
@@ -121,6 +134,11 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     function showMember(index) {
+        if (!membersData || membersData.length === 0) {
+            console.error('No members data available');
+            return;
+        }
+
         if (index < 0 || index >= membersData.length) {
             console.error('Invalid member index:', index);
             return;
