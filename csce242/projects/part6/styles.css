@@ -124,6 +124,7 @@ footer nav:hover{
 /* Hamburger Menu */
 .hamburger {
     display: none;
+    /*
     flex-direction: column;
     cursor: pointer;
     padding: var(--spacing-sm);
@@ -134,6 +135,7 @@ footer nav:hover{
     z-index: 1001;
     background: var(--bg-dark);
     border-radius: var(--radius-sm);
+    */
 }
 
 .hamburger span {
@@ -958,13 +960,31 @@ main{
     }
 
     .hamburger{
-        display: flex !important;
-        position: fixed !important;
-        right: 20px !important;
-        bottom: 90px !important;
-        background: red !important;
-        z-index: 9999 !important;
-        padding: 15px !important;
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: yellow;
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        z-index: 99999;
+        cursor: pointer;display: block;
+        width: 50px;
+        height: 50px;
+        background: yellow;
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        z-index: 99999;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        background: black;
+        margin: 6px auto;
     }
 
     footer{
