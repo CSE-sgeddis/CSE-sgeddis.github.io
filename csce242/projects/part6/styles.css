@@ -181,23 +181,23 @@ footer nav:hover{
 
 /* Headers */
 body:not(.main-page) {
-    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
 }
 
 body.discography-page {
-    background: var(--discography-primary);
+    background: linear-gradient(90deg,rgba(0, 212, 255, 1) 0%, rgba(0, 153, 204, 1) 50%);
 }
 
 body.media-page {
-    background: #c77dff;
+    background: linear-gradient(90deg,rgba(199, 125, 255, 1) 0%, rgba(157, 78, 221, 1) 60%);
 }
 
 body.members-page {
-    background-image: linear-gradient(to right, rgba(10, 51, 255, 0.3), blue);
+    background: linear-gradient(to right, rgba(10, 51, 255, 0.3), blue);
 }
 
 body.community-page {
-    background: var(--community-primary);
+    background: linear-gradient(90deg, rgba(6, 255, 165, 1) 0%, rgba(0, 204, 136, 1) 71%);
 }
 
 body:not(.main-page) header {
@@ -677,13 +677,12 @@ body.main-page .tagline{
 
  /* Profile Images Section */
 .profile-images{
-    background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
     box-shadow: 0 4px 15px rgba(255, 214, 10, 0.2);
     border: 2px solid var(--members-primary);
     position:sticky;
-    top: var(--spacing-lg);
+    top: var(--spacing-md);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
@@ -834,68 +833,6 @@ body.main-page .tagline{
 }
 
   
-/* Member Pagination */
-.member-pagination{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-xl);
-    flex-wrap: wrap;
-}
-
-.member-pagination a{
-    background-color: var(--accent);
-    color:black;
-    padding: 05rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-block;
-    margin: 0 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.member-pagination button {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid var(--border-gray);
-    border-radius: var(--radius-sm);
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.member-pagination button:hover:not(:disabled) {
-    background: var(--accent-red);
-    color: var(--text-inverse);
-    border-color: var(--accent-red);
-}
-
-.member-pagination a:hover{
-    background-color: var(--accent-orange);
-}
-
-.member-pagination button:disabled{
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-.member-pagination span {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-weight: 600;
-    color: var(--text-secondary);
-}
-
-.member-pagination .current{
-    background-color: var(--text);
-    color: var(--accent-red);
-    font-weight: bold;
-    padding:0.5rem 1rem;
-    border-radius: 6px;
-    margin: 0 0.5rem;
-}
-
 /* Community */
 main{
     padding:1rem 2rem;
