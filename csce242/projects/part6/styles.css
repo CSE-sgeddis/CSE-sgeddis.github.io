@@ -185,8 +185,7 @@ body:not(.main-page) {
 }
 
 body.discography-page {
-    --accent-red: var(--discography-primary);
-    --accent-orange: var(--discography-secondary);
+    background: var(--discography-primary);
 }
 
 body.media-page {
@@ -194,13 +193,11 @@ body.media-page {
 }
 
 body.members-page {
-    --accent-red: var(--members-primary);
-    --accent-orange: var(--members-secondary);
+    background-image: linear-gradient(to right, rgba(10, 51, 255, 0.3), blue);
 }
 
 body.community-page {
-    --accent-red: var(--community-primary);
-    --accent-orange: var(--community-secondary);
+    background: var(--community-primary);
 }
 
 body:not(.main-page) header {
@@ -903,6 +900,9 @@ body.main-page .tagline{
 main{
     padding:1rem 2rem;
     flex:1;
+}
+
+.community-page{
     background: linear-gradient(90deg, #ff4444 0%, #ff8c42 100%);
 }
 
