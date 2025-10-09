@@ -960,17 +960,15 @@ main{
     }
 
     .hamburger{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: block;
         align-items: center;
         width: 50px;
         height: 50px;
         background: #808080;
         position: fixed;
-        bottom: 90px;
+        bottom: 100px;
         right: 20px;
-        z-index: 1001;
+        z-index: 99999;
         cursor: pointer;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -986,8 +984,8 @@ main{
         display: block;
         width: 25px;
         height: 3px;
-        background: #fff;
-        margin: 3px 0;
+        background: #000000;
+        margin: 3px auto;
         border-radius: 2px;
         transition: all 0.3s ease;
     }
