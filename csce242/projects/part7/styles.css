@@ -680,8 +680,8 @@ body.main-page .tagline{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
-    max-height: calc(100vh - 120px);
-    overflow-y:auto;
+    max-height: fit-content;
+    overflow-y: visible;
     grid-row: 1; 
     grid-column: 1;
 }
@@ -765,6 +765,7 @@ body.main-page .tagline{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 3px solid var(--members-secondary);
     padding-bottom: 0.5rem;
+    padding-left: 1rem;
 }
 
 .member-info h3{
@@ -785,6 +786,7 @@ body.main-page .tagline{
     background: rgba(255, 255, 255, 0.6);
     padding: 1rem;
     border-radius: var(--radius-sm);
+    max-width: 800px;
 }
 
 .member-stats{
