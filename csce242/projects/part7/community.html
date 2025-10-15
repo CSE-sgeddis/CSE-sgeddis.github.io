@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Community</title>
+        <link rel="stylesheet" href="styles.css"> 
+    </head>
+    <body class="community-page">
+        <header>
+            <h1>COMMUNITY</h1>
+        </header>
+        
+        <main>
+            <section class="content-area">
+
+                <div class="content-text">
+                    <p>Welcome to the STAY community! This is the place where fans can connect, share their love for Stray Kids, and keep the spirit of STAY alive. Here, you'll find opportunities to chat with fellow fans, discover fan projects, and join discussions about music, performances, and events. You'll also be able to stay connected with Stray Kids through official updates, upcoming schedules, and special activities. This page will grow with more ways to connect, so check back often and let's make sure Stray Kids always stay together with STAY. Whether you're a longtime fan or just starting your journey, you'll find a welcoming space here. From sharing fan art and stories to supporting comeback promotions, every STAY has something to contribute. Together, we make Stray Kids stay!</p>
+                </div>
+            </section> 
+
+            <div class="community-feature">
+                <img src="images/community/stayhideout.jpg" alt="Community Feature" height="600" width="600">
+            </div>
+            
+            
+            <section class="communication-section">
+                <div class="comm-card">
+                    <h3>Communicate with<br>Stray Kids!</h3>
+                    <img src="images/community/skz.jpg" alt="Stray Kids">
+                    <div class="link-container">
+                        <a href="https://www.instagram.com/realstraykids/" target="_blank" rel="noopener noreferrer" class="go-btn">
+                            Official Instagram
+                        </a>
+                        <a href="https://twitter.com/Stray_Kids" target="_blank" rel="noopener noreferrer" class="go-btn">
+                            Official Twitter
+                        </a>
+                        <a href="https://www.youtube.com/@StrayKids" target="_blank" rel="noopener noreferrer" class="go-btn">
+                            Official YouTube
+                        </a>
+                    </div>
+                </div>
+                <div class="comm-card">
+                    <h3>Communicate with <br>Stays!</h3>
+                    <img src="images/community/skzoo.jpg" alt="Stays Community">
+                    <div class="link-container">
+                        <a href="https://www.reddit.com/r/straykids/" target="_blank" rel="noopener noreferrer" class="go-btn">
+                            Reddit Community
+                        </a>
+                        <a href="https://discord.gg/straykids" target="_blank" rel="noopener noreferrer" class="go-btn">
+                            Discord Server
+                        </a>
+                        <a href="https://twitter.com/hashtag/StrayKids" target="_blank" rel="noopener noreferrer" class="go-btn">
+                            Twitter #StrayKids
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+           <section class="contact-section">
+                <h2>Contact Us</h2>
+                <div class="contact-wrapper">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h3>Send Us a Message</h3>
+                        <form method="POST" id="contactForm">
+                            <input type="hidden" name="access_key" value="a2372865-0944-431f-9837-40767f61ede8">
+                            <div class="form-group">
+                                <label for="name">Name: </label>
+                                <input type="text" id="name" name="name" required minlength="2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email: </label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group"> 
+                                <label for="subject">Subject: </label>
+                                <input type="text" id="subject" name="subject" required minlength="3">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message: </label>
+                                <textarea id="message" name="message" required minlength="10"></textarea>
+                            </div>
+
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+
+                            <div id="contact-result"></div>
+                        </form>
+                    </div>
+
+                    <!-- IFrame Section -->
+                    <div class="contact-iframe-container">
+                        <h3>Find STAY Community Events</h3>
+                        <div class="iframe-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/EaswWiwMVs8"
+                                title="Stray Kids Video"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section> 
+
+        </main>
+        <footer>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discography.html">Discography</a></li>
+                    <li><a href="media.html">Media</a></li> 
+                    <li><a href="members.html">Members</a></li> 
+                    <li><a href="community.html" class="active">Community</a></li>     
+                </ul>   
+            </nav>   
+        </footer>
+        <script src="js/community.js"></script>
+        <script src="js/contact.js"></script>
+    </body>
+</html>
